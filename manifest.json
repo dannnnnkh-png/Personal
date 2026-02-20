@@ -1,0 +1,21 @@
+{
+  "name": "掃描記帳 PWA",
+  "short_name": "記帳",
+  "description": "用拍照和連結快速記錄流水帳務",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f9f6f2",
+  "theme_color": "#8a4f3c",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
