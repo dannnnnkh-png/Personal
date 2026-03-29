@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KH Chen | Senior Process Integration Engineer</title>
+<meta name="description" content="KH Chen - Senior Process Integration Engineer with 12+ years of experience in advanced semiconductor manufacturing. Open to Lead Engineer and Engineering Manager opportunities." />
+<style>
+:root{
+  --bg:#f7f9fc;
+  --surface:#ffffff;
+  --surface-2:#f2f6fb;
+  --text:#14212b;
+  --muted:#5c6b78;
+  --line:#d6e0ea;
+  --primary:#0f4c75;
+  --primary-2:#1e6b98;
+  --gold:#b9964f;
+  --gold-soft:rgba(185,150,79,.16);
+  --shadow:0 14px 40px rgba(17,51,78,.08);
+  --shadow-soft:0 10px 24px rgba(17,51,78,.06);
+  --radius:18px;
+  --container:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  padding-top:0;
+
+  margin:0;
+  min-height:100vh;
+  font-family:Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(30,107,152,.06), transparent 24%),
+    radial-gradient(circle at top left, rgba(185,150,79,.08), transparent 22%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:rgba(15,76,117,.14)}
+a{color:var(--primary);text-decoration:none}
+img{max-width:100%}
+
+a:focus-visible, button:focus-visible, .btn:focus-visible{
+  outline:3px solid rgba(185,150,79,.45);
+  outline-offset:3px;
+}
+
+
+.container{
+  width:min(var(--container), calc(100% - 32px));
+  margin:0 auto;
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(12px);
+  background:rgba(247,249,252,.82);
+  border-bottom:1px solid rgba(214,224,234,.75);
+}
+.topbar-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:72px;
+  gap:16px;
+}
+.brand{
+  font-weight:800;
+  letter-spacing:.02em;
+  color:var(--primary);
+}
+.nav{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.nav a{
+  position:relative;
+  color:var(--muted);
+  font-size:.95rem;
+  padding:6px 0;
+  transition:color .25s var(--ease);
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg, var(--primary), var(--gold));
+  transition:width .28s var(--ease);
+}
+.nav a:hover{color:var(--primary)}
+.nav a:hover::after{width:100%}
+
+.hero{
+  padding:72px 0 40px;
+}
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg, rgba(255,255,255,.96), rgba(242,246,251,.96));
+  border:1px solid rgba(214,224,234,.95);
+  box-shadow:var(--shadow);
+  border-radius:28px;
+  padding:44px;
+}
+.hero-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(120deg, transparent 0%, rgba(255,255,255,.48) 40%, transparent 80%);
+  transform:translateX(-120%);
+  transition:transform .9s var(--ease);
+  pointer-events:none;
+}
+.hero-card:hover::before{
+  transform:translateX(120%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr .95fr;
+  gap:30px;
+  align-items:start;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:.82rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--primary-2);
+  font-weight:700;
+}
+.eyebrow::before{
+  content:"";
+  width:34px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--gold), var(--primary));
+}
+h1{
+  font-size:clamp(2.3rem, 5vw, 4.4rem);
+  line-height:1.04;
+  margin:16px 0 10px;
+  letter-spacing:-.03em;
+}
+.hero-title{
+  font-size:1.08rem;
+  color:var(--muted);
+  font-weight:600;
+  margin:0 0 20px;
+}
+.lead{
+  scroll-margin-top:18px;
+  font-size:1.08rem;
+  color:#253643;
+  max-width:760px;
+  margin:0 0 26px;
+}
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+.btn{
+  appearance:none;
+  border:none;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:13px 18px;
+  border-radius:999px;
+  font-weight:700;
+  letter-spacing:.01em;
+  transition:
+    transform .22s var(--ease),
+    box-shadow .25s var(--ease),
+    background .25s var(--ease),
+    color .25s var(--ease),
+    border-color .25s var(--ease);
+  box-shadow:var(--shadow-soft);
+}
+.btn:hover{
+  transform:translateY(-2px);
+}
+.btn:active{
+  transform:translateY(0) scale(.985);
+}
+.btn-primary{
+  color:#fff;
+  background:linear-gradient(135deg, var(--primary), var(--primary-2));
+}
+.btn-primary:hover{
+  box-shadow:0 16px 34px rgba(15,76,117,.22);
+}
+.btn-secondary{
+  color:var(--primary);
+  background:#fff;
+  border:1px solid var(--line);
+}
+.btn-secondary:hover{
+  background:var(--surface-2);
+  border-color:#b8c9d8;
+}
+.hero-side{
+  display:grid;
+  gap:14px;
+}
+.info-card{
+  background:rgba(255,255,255,.8);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:18px 18px 16px;
+  box-shadow:var(--shadow-soft);
+  transition:transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+.info-card:hover{
+  transform:translateY(-4px);
+  border-color:#bfd0de;
+  box-shadow:0 16px 36px rgba(17,51,78,.09);
+}
+.info-label{
+  margin:0 0 6px;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700;
+}
+.info-value{
+  margin:0;
+  color:var(--text);
+  font-weight:700;
+}
+
+section{
+  padding:20px 0;
+}
+.section-card{
+  background:var(--surface);
+  border:1px solid rgba(214,224,234,.96);
+  border-radius:24px;
+  box-shadow:var(--shadow-soft);
+  padding:30px;
+  margin:0 0 20px;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.section-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 34px rgba(17,51,78,.08);
+}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:16px;
+}
+.section-head h2{
+  margin:0;
+  font-size:1.28rem;
+  color:var(--primary);
+  letter-spacing:-.02em;
+}
+.section-rule{
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg, rgba(15,76,117,.18), rgba(185,150,79,.18), transparent);
+}
+
+.achievement-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:14px;
+}
+.achievement-list li{
+  position:relative;
+  padding:18px 18px 18px 36px;
+  background:linear-gradient(180deg, #fff, #fbfdff);
+  border:1px solid var(--line);
+  border-radius:18px;
+  color:#22313d;
+  transition:transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+}
+.achievement-list li:hover{
+  transform:translateY(-2px);
+  border-color:#bfd0de;
+  background:#fff;
+}
+
+.achievement-list li::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:22px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#0f3c5f 0%, #1e5f8a 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.25),
+    0 1px 3px rgba(15,60,95,.25);
+}
+
+
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+.tag{
+  padding:10px 14px;
+  border-radius:999px;
+  background:linear-gradient(180deg, #fff, #f4f8fb);
+  border:1px solid var(--line);
+  color:#24404f;
+  font-size:.95rem;
+  font-weight:600;
+  box-shadow:0 8px 18px rgba(17,51,78,.04);
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+}
+.tag:hover{
+  transform:translateY(-2px);
+  border-color:#bfd0de;
+  box-shadow:0 12px 24px rgba(17,51,78,.08);
+}
+
+.exp-grid{
+  display:grid;
+  gap:18px;
+}
+.exp-item{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px 20px;
+  background:linear-gradient(180deg, #fff, #fbfdff);
+}
+.exp-item h3{
+  margin:0 0 6px;
+  font-size:1.08rem;
+  color:var(--text);
+}
+.exp-meta{
+  font-size:.92rem;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+.exp-item p{
+  margin:0;
+  color:#233441;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:18px;
+}
+.contact-note{
+  margin:0 0 16px;
+  color:#253643;
+  max-width:56ch;
+}
+.contact-panel{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px;
+  background:linear-gradient(180deg, #fff, #f8fbfe);
+}
+.contact-links{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+.contact-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--text);
+  transition:transform .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
+}
+.contact-link:hover{
+  transform:translateY(-2px);
+  border-color:#bfd0de;
+  box-shadow:0 12px 26px rgba(17,51,78,.08);
+}
+.contact-link small{
+  color:var(--muted);
+}
+.footer{
+  padding:24px 0 40px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+/* entrance animation */
+.reveal{
+  opacity:1;
+  transform:none;
+
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .hero-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-card{
+    padding:28px 22px;
+    border-radius:24px;
+  }
+  .section-card{
+    padding:22px 18px;
+  }
+  .topbar-inner{
+    min-height:64px;
+  }
+  .nav{
+    gap:14px;
+  }
+}
+@media (max-width: 560px){
+  .container{
+    width:min(var(--container), calc(100% - 20px));
+  }
+  .topbar{
+    position:static;
+  }
+  .topbar-inner{
+    display:block;
+    padding:12px 0;
+  }
+  .brand{
+    display:block;
+    margin-bottom:10px;
+  }
+  .nav{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding-bottom:2px;
+  }
+  .nav::-webkit-scrollbar{
+    display:none;
+  }
+  .hero{
+    padding-top:24px;
+  }
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .btn{
+    width:100%;
+  }
+  .hero-card,
+  .section-card{
+    border-radius:20px;
+  }
+  .achievement-list li{
+    padding:16px 14px 16px 46px;
+  }
+  .achievement-list li::before{
+    left:14px;
+  }
+  
+}
+  .hero{
+    padding-top:28px;
+  }
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .btn{
+    width:100%;
+  }
+  .topbar-inner{
+    align-items:flex-start;
+    padding:12px 0;
+  }
+  .nav{
+    display:flex;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+    width:100%;
+    padding-bottom:4px;
+    scrollbar-width:none;
+  }
+  .nav::-webkit-scrollbar{
+    display:none;
+  }
+}
+</style>
+</head>
+<body id="top">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">KH Chen</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#summary">Summary</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="summary">
+      <div class="container">
+        <div class="hero-card reveal">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">12+ Years in Advanced Semiconductor Manufacturing</div>
+              <h1>KH Chen</h1>
+              <p class="hero-title">Senior Process Integration Engineer</p>
+              <p class="lead">Open to Lead Engineer and Engineering Manager opportunities, with strong experience in FinFET process integration, technical leadership, and practical engineering execution.</p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#contact">Contact Me</a>
+              </div>
+            </div>
+            <aside class="hero-side">
+              <div class="info-card">
+                <p class="info-label">Current Focus</p>
+                <p class="info-value">Process Integration · Yield · Reliability · Automation</p>
+              </div>
+              <div class="info-card">
+                <p class="info-label">Open To</p>
+                <p class="info-value">Lead Engineer · Engineering Manager</p>
+              </div>
+              <div class="info-card">
+                <p class="info-label">Location</p>
+                <p class="info-value">Tainan, Taiwan</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-card reveal">
+          <div class="section-head">
+            <h2>Key Achievements</h2>
+            <div class="section-rule"></div>
+          </div>
+          <ul class="achievement-list">
+            <li>Recognized for strong expertise in GOX reliability failure analysis, with deep engineering knowledge in device physics and process integration.</li>
+            <li>Led the design and implementation of a unique automated WAT hold-lot handling workflow, integrating decision logic to reduce manual intervention and significantly improve operational efficiency.</li>
+            <li>Served as the only engineer in the team capable of independently developing a process automation defense system using Python and Power BI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-card reveal">
+          <div class="section-head">
+            <h2>Core Skills</h2>
+            <div class="section-rule"></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Process Integration</span>
+            <span class="tag">GOX Reliability</span>
+            <span class="tag">Device Performance &amp; Yield Optimization</span>
+            <span class="tag">WAT Monitoring &amp; Yield Failure Analysis</span>
+            <span class="tag">Workflow Automation</span>
+            <span class="tag">Python</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">AI Agent Prototyping (Personal Exploration)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="character">
+      <div class="container">
+        <div class="section-card reveal">
+          <div class="section-head">
+            <h2>Character</h2>
+            <div class="section-rule"></div>
+          </div>
+          <div class="tags">
+            <span class="tag">Ownership</span>
+            <span class="tag">Innovation</span>
+            <span class="tag">Positive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-card reveal">
+          <div class="section-head">
+            <h2>Experience</h2>
+            <div class="section-rule"></div>
+          </div>
+          <div class="exp-grid">
+            <article class="exp-item">
+              <h3>Senior Process Integration Engineer — TSMC</h3>
+              <div class="exp-meta">Tainan, Taiwan · Advanced Semiconductor Manufacturing</div>
+              <p>
+                Responsible for advanced-node process integration, yield monitoring, and reliability analysis. Developed automation workflows and data-driven dashboards to improve engineering productivity and process stability. Worked closely with cross-functional teams to resolve yield excursions and optimize device performance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-card reveal">
+          <div class="section-head">
+            <h2>Contact</h2>
+            <div class="section-rule"></div>
+          </div>
+          <div class="contact-grid">
+            <div>
+              <p class="contact-note">
+                Motivated by innovation and open to new challenges, while remaining grounded in practical execution and long-term value.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="mailto:Dannnnn.kh@gmail.com">Let's Connect</a>
+                <a class="btn btn-secondary" href="#top">Back to Top</a>
+              </div>
+            </div>
+            <div class="contact-panel">
+              <div class="contact-links">
+                <a class="contact-link" href="mailto:Dannnnn.kh@gmail.com">
+                  <span>
+                    <strong>Email</strong><br />
+                    <small>Dannnnn.kh@gmail.com</small>
+                  </span>
+                  <span>↗</span>
+                </a>
+                <div class="contact-link">
+                  <span>
+                    <strong>Location</strong><br />
+                    <small>Tainan, Taiwan</small>
+                  </span>
+                  <span>•</span>
+                </div>
+                <div class="contact-link">
+                  <span>
+                    <strong>Opportunity Focus</strong><br />
+                    <small>Lead Engineer · Engineering Manager</small>
+                  </span>
+                  <span>•</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </section>
+  </main>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+document.querySelectorAll('.btn, .contact-link, .tag, .info-card, .achievement-list li').forEach((el) => {
+  el.addEventListener('pointerenter', () => {
+    el.style.willChange = 'transform';
+  });
+  el.addEventListener('pointerleave', () => {
+    el.style.willChange = 'auto';
+  });
+});
+</script>
+</body>
+</html>
+
+<style>
+@media (max-width:768px){
+  .hero-card,.section-card{
+    opacity:1 !important;
+    transform:none !important;
+  }
+}
+</style>
